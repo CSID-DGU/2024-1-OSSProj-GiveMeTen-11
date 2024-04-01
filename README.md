@@ -1,13 +1,11 @@
 <div><img src="https://capsule-render.vercel.app/api?type=waving&color=0:99cc99,100:009630&height=200&section=header&text=GiveMeTen&fontSize=90" /></div>
 
-# 👋 팀원 소개
 
-|구분|이름|학과|학번|Github ID|
-|---|---|---|---|---|
-|팀장|전병현|산업시스템공학과|2019112481|[IAMBH](https://github.com/IAMBH)|
-|팀원|박주한|사학과|2019110359|[pjh0428](https://github.com/pjh0428)|
-|팀원|성민제|의생명공학과|2019111770|[MinSungJe](https://github.com/MinSungJe)|
-
+### 2024-1-OSSProj-GiveMeTen-11 팀의 리파지토리입니다.
+- 팀 구성  
+    - (팀장) 전병현  
+    - (팀원) 박주한
+    - (팀원) 성민제
 
 # 🛠️ Tech
 
