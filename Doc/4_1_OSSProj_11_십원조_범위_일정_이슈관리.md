@@ -6,7 +6,6 @@
     - https://docs.google.com/spreadsheets/d/1vVCRX_vdMhFZZHoJ5Yt_aKJLxs6UkNaMYOK2mssfyKI/edit?usp=sharing
     
     ![KakaoTalk_Photo_2024-04-16-00-56-00 002](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/127372538/656a65ef-ce4f-498a-8a45-04896f803ed8)
-    4f53-be0d-18fc937e6ebc)
 
     
 - 4월 주요 일정
