@@ -2,12 +2,10 @@
 
 ## **범위/일정 관리**
 
-- 프로젝트 간트차트
-    - https://docs.google.com/spreadsheets/d/1vVCRX_vdMhFZZHoJ5Yt_aKJLxs6UkNaMYOK2mssfyKI/edit?usp=sharing
-    
-    ![KakaoTalk_Photo_2024-04-16-00-56-00 002](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/127372538/656a65ef-ce4f-498a-8a45-04896f803ed8)
+- [프로젝트 간트차트](https://docs.google.com/spreadsheets/d/1vVCRX_vdMhFZZHoJ5Yt_aKJLxs6UkNaMYOK2mssfyKI/edit?usp=sharing)
+        
+    ![Gantt Chart](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/855a21e4-f8b7-4d3e-bd0e-3cae91bad420)
 
-    
 - 4월 주요 일정
     - 수행 계획서 발표 준비
 - 5월 주요 일정
@@ -29,11 +27,9 @@
 
 ## **이슈 관리**
 
-- Github Issue 관리 페이지
+- [Github Issue 관리 페이지](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/issues)
     
-    https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/issues
+    ![Github Issue](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/d8eb28fd-03c5-4d77-9d3d-56093ad61ce8)
     
+- 프로젝트 개발 및 진행 중 발생하는 이슈는 Github를 통해 지속적으로 관리하고 작성한다.
 
-![KakaoTalk_Photo_2024-04-16-00-56-00 001](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/127372538/07584630-c742-4f53-be0d-18fc937e6ebc)
-
-- 프로젝트 개발 및 진행 중 진행되는 이슈를 Github를 통해 관리하고 작성한다
