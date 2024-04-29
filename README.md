@@ -7,6 +7,12 @@
     - (팀원) 성민제
     - (팀원) 박주한
 
+# ➡️ Docs
+### 프로젝트 관리문서 바로가기
+- [범위 / 일정 관리](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/blob/main/Doc/4_1_OSSProj_11_%EC%8B%AD%EC%9B%90%EC%A1%B0_%EB%B2%94%EC%9C%84_%EC%9D%BC%EC%A0%95_%EC%9D%B4%EC%8A%88%EA%B4%80%EB%A6%AC.md)
+- [이슈 관리](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/issues)
+- [회의록](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/blob/main/Doc/4_2_OSSProj_11_%EC%8B%AD%EC%9B%90%EC%A1%B0_%ED%9A%8C%EC%9D%98%EB%A1%9D.md)
+- [제품의 구성, 배포 및 운영 관련 문서 자료](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/blob/main/Doc/4_3_OSSProj_11_%EC%8B%AD%EC%9B%90%EC%A1%B0_%EC%A0%9C%ED%92%88%EA%B5%AC%EC%84%B1%EB%B0%B0%ED%8F%AC%EC%9A%B4%EC%98%81%EC%9E%90%EB%A3%8C.md)
 
 # 🛠️ Tech
 
@@ -15,29 +21,37 @@ REACT
 <br/>
 DRF
 
-## 백엔드 프로젝트 실행 방법
-### 가상환경 만들기
+## 프로젝트 실행 방법
+### 🖼️ FrontEnd
+#### frondend 폴더로 이동 후
+```cmd
+npm install
+npm start
+``` 
+
+### 💾 BackEnd
+#### 1. 가상환경 만들기
 ##### 최초 1회 실행
     python -m venv {가상 환경 이름}
 
     * 가상 환경 이름은 venv로 통일
 
-#### 아래서부터는 반복
-### 3-2. 가상환경 실행
+##### 아래서부터는 반복
+#### 2. 가상환경 실행
     source venv/Scripts/activate
 
-### 3-3. 라이브러리 설치
+#### 3. 라이브러리 설치
     pip install -r requirements.txt
 
     * 추가됐으면 추가한 사람이 'pip freeze > requirements.txt' 꼭 해주기
     * 작업하는 사람은 작업 전 pull 받고 'pip install -r requirements.txt' 꼭 해주기
 
-### 3-4. db 마이그레이션 진행
+#### 4. db 마이그레이션 진행
     * manage.py 파일이 있는 위치로 이동 후
     python manage.py makemigrations
     python manage.py migrate
 
-### 3-5. 서버 실행
+#### 5. 서버 실행
     python manage.py runserver
 
 
