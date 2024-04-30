@@ -1,6 +1,5 @@
 export const colors = {
-    dOrange: '#fd7401',
-    dBrown: '#8e7d78',
-    dGray: '#f1f3f6',
-    dWhite: '#ffffff'
+    Orange: '#fe8e03',
+    BackgoundGray: '#F5F7FA',
+    White: '#FFFFFF'
   };
