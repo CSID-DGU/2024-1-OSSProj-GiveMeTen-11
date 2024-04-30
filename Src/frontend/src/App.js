@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import ScheduleCard from './components/Schedule/ScheduleCard.js'
 
 function App() {
   return (
     <div className="App">
-      <h1>App Main</h1>
+      <h1>알리미 DNOW</h1>
+      <ScheduleCard />
     </div>
   );
 }
