@@ -4,6 +4,7 @@ import { colors } from "../../constants/Colors"
 export const Container = styled.div`
 background-color: ${colors.Orange};
 width: 320px;
+height: 400px;
 text-align: center;
 justify-content: center;
 align-content: center;
@@ -17,26 +18,18 @@ color: ${colors.White};
 `
 export const CardContainer = styled.div`
 background-color: ${colors.White};
-width: 300px;
-height: 310px;
+width: 100%;
+height: 84%;
 overflow-x: hidden;
 overflow-y: auto;
 margin: auto;
-padding: 10px;
 border-bottom-left-radius: 18px;
 border-bottom-right-radius: 18px;
 `
 export const Card = styled.div`
-width: 300px;
-height: 90px;
+height: 25%;
 text-align: left;
-&:after {
-    content: "";
-    display: block;
-    width: 280px;
-    border-bottom: 1px solid ${colors.Gray};
-    margin: 0px auto;
-}
+border-bottom: 1px solid ${colors.Gray}
 `
 export const DateText = styled.div`
 font-size: 18px;
