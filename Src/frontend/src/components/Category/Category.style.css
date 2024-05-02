@@ -1,0 +1,67 @@
+.container {
+    border: 1px solid #373150;
+    width: 640px;
+    height: 400px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.tab-row {
+    height: 15%;
+}
+
+.category-row {
+    border-top: 1px solid #373150;
+    border-bottom: 1px solid #373150;
+    height: 65%;
+}
+
+.category-select-column {
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+.category-checkbox-column {
+    float: right;
+    width: 79%;
+    height: 100%;
+    border-left: 1px solid #373150;
+}
+
+.selected-row {
+    height: 20%;
+}
+
+.selected-category {
+    display: flex;
+    float: left;
+    width: 65%;
+}
+
+.btn-container {
+    float: right;
+    width: 30%;
+}
+
+.display-clear {
+    clear: both;
+}
+
+.select-btn {
+    background-color: #373150;
+    transition: all 0.5s;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.select-btn:hover {
+    background-color: #5e567c;
+}
+.select-btn:active {
+    transition: none;
+    background-color: #262237;
+}

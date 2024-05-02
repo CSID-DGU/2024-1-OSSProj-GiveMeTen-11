@@ -1,6 +1,7 @@
 export const colors = {
     Orange: '#FE8E03',
-    BackgoundGray: '#F5F7FA',
+    BackgroundGray: '#F5F7FA',
     White: '#FFFFFF',
-    Gray: '#808080',
+    Grey: '#808080',
+    Black: '#373150',
   };
