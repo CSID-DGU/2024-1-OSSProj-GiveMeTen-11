@@ -1,10 +1,15 @@
 .container {
     border: 1px solid #373150;
+    background: white;
     width: 640px;
     height: 400px;
     justify-content: center;
     text-align: center;
     align-items: center;
+}
+
+.clear-both {
+    clear: both;
 }
 
 .tab-row {
@@ -18,19 +23,20 @@
 }
 
 .category-select-column {
-    float: left;
     width: 20%;
     height: 100%;
+    float: left;
 }
 
 .category-checkbox-column {
-    float: right;
     width: 79%;
     height: 100%;
-    border-left: 1px solid #373150;
+    float: left;
+    border-left: 1px solid #262237;
 }
 
 .selected-row {
+    clear: both;
     height: 20%;
 }
 
@@ -45,23 +51,34 @@
     width: 30%;
 }
 
-.display-clear {
-    clear: both;
+.main-select-container {
+    width: 33%;
+    height: 100%;
+    border: 1px solid #262237;
+    float: left;
 }
 
-.select-btn {
-    background-color: #373150;
-    transition: all 0.5s;
-    color: white;
-    padding: 10px 30px 10px 30px;
-    border: none;
-    border-radius: 5px;
-    font-weight: 700;
+.main-select-img {
+    height: 100%;
+    margin-left: 10px;
+    float: left;
 }
-.select-btn:hover {
-    background-color: #5e567c;
+
+.main-select-text {
+    margin-left: 20px;
+    padding: 1% 0%;
+    float: left;
 }
-.select-btn:active {
-    transition: none;
-    background-color: #262237;
+
+.detail-select-container {
+    background-color: #d7d6dc;
+    padding: 5px;
+}
+
+.detail-select-container p {
+    margin: 0px;
+    float: left;
+}
+.Arrow {
+    float: right;
 }
