@@ -3,7 +3,7 @@ import { colors } from "../../constants/Colors"
 
 export const Container = styled.div`
 background-color: white;
-width: 900px;
+width: 990px;
 `
 
 export const MainTable = styled.table`
