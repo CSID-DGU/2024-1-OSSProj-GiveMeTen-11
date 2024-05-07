@@ -9,7 +9,7 @@ text-align: center;
 justify-content: center;
 align-content: center;
 border: 2px solid ${colors.Orange};
-border-radius: 20px;
+/* border-radius: 20px; */
 `
 export const MonthText = styled.h2`
 font-size: 30px;
@@ -23,8 +23,8 @@ height: 84%;
 overflow-x: hidden;
 overflow-y: auto;
 margin: auto;
-border-bottom-left-radius: 18px;
-border-bottom-right-radius: 18px;
+/* border-bottom-left-radius: 18px;
+border-bottom-right-radius: 18px; */
 `
 export const Card = styled.div`
 height: 25%;
