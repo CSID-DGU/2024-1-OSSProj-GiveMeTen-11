@@ -1,59 +1,74 @@
 import { useState } from 'react';
-import './Category.style.css'
 import basicNotice from '../../images/basicNotice.png'
 import classNotice from '../../images/classNotice.png'
+import { CategorySelectCol, CategorySelectRow, CategoryShowCol, CategoryShowRow, Container, MainSelectOption, MainSelectRow, CategorySelectOption, MainSelectOptionSelected, CategorySelectOptionSelected } from './Category.style';
 
 function CategoryCard() {
-    let [tab, setTab] = useState('일반공지')
+    let [mainTab, setMainTab] = useState('공지사항')
+    let [detailTab, setDetailTab] = useState('일반공지')
 
     return (
-        <div className='container'>
-            <div className='tab-row'>
-                <MainSelectList img={basicNotice} name='공지사항'/>
-                <MainSelectList img={classNotice} name='학과별 공지'/>
-            </div>
-            <div className='clear-both'/>
-            <div className='category-row'>
-                <div className='category-select-column'>
-                    <DetailSelectList name='일반공지' setTab={setTab}/>
-                    <DetailSelectList name='학사공지' setTab={setTab}/>
-                    <DetailSelectList name='입시공지' setTab={setTab}/>
-                </div>
-                <div className='category-checkbox-column'>
-                    <TabContents tab={tab}/>
-                </div>
-            </div>
-            <div className='selected-row'>
-
-            </div>
-        </div>
+        <Container>
+            <MainSelectRow>
+                <MainSelectBtn name={'공지사항'} img={basicNotice} mainTab={mainTab} setMainTab={setMainTab}></MainSelectBtn>
+                <MainSelectBtn name={'학과별 공지'} img={classNotice} mainTab={mainTab} setMainTab={setMainTab}></MainSelectBtn>
+            </MainSelectRow>
+            <CategorySelectRow>
+                <CategorySelectTab mainTab={mainTab} detailTab={detailTab} setDetailTab={setDetailTab}></CategorySelectTab>
+                <CategoryShowCol></CategoryShowCol>
+            </CategorySelectRow>
+            <CategoryShowRow></CategoryShowRow>
+        </Container>
     )
 }
 
-function MainSelectList({img, name}) {
+function MainSelectBtn({ name, img, mainTab, setMainTab }) {
+    let isSelected = mainTab == name;
     return (
-        <div className='main-select-container'>
-            <img src={img} alt='이미지' className='main-select-img'></img>
-            <p className='main-select-text'>{name}</p>
-        </div>
+        isSelected ?
+            <MainSelectOptionSelected>
+                <img src={img} alt={name}></img>
+                <p>{name}</p>
+            </MainSelectOptionSelected> :
+
+            <MainSelectOption onClick={() => { setMainTab(name) }}>
+                <img src={img} alt={name}></img>
+                <p>{name}</p>
+            </MainSelectOption>
     )
 }
 
-function DetailSelectList({name, setTab}) {
-    return (
-        <div className='detail-select-container' onClick={()=>{setTab(name)}}>
-            <div className='detail-select-nav'><p>{name}</p><span className='Arrow'>&gt;</span></div>
-            <div className='clear-both'/>
-        </div>
-    )
-}
-
-function TabContents({tab}) {
+function CategorySelectTab({ mainTab, detailTab, setDetailTab }) {
     return {
-        '일반공지':<div>일반임</div>,
-        '학사공지':<div>학사임</div>,
-        '입시공지':<div>입시임</div>
-    }[tab]
+        '공지사항':
+            <CategorySelectCol>
+                <CategorySelectBtn name={'일반공지'} detailTab={detailTab} setDetailTab={setDetailTab}></CategorySelectBtn>
+                <CategorySelectBtn name={'학사공지'} detailTab={detailTab} setDetailTab={setDetailTab}></CategorySelectBtn>
+                <CategorySelectBtn name={'입시공지'} detailTab={detailTab} setDetailTab={setDetailTab}></CategorySelectBtn>
+            </CategorySelectCol>,
+        '학과별 공지':
+            <CategorySelectCol>
+                <CategorySelectBtn name={'공과대학'} detailTab={detailTab} setDetailTab={setDetailTab}></CategorySelectBtn>
+                <CategorySelectBtn name={'이과대학'} detailTab={detailTab} setDetailTab={setDetailTab}></CategorySelectBtn>
+                <CategorySelectBtn name={'문과대학'} detailTab={detailTab} setDetailTab={setDetailTab}></CategorySelectBtn>
+            </CategorySelectCol>
+    }[mainTab]
+
+
+}
+
+function CategorySelectBtn({ name, detailTab, setDetailTab }) {
+    let isSelected = detailTab == name;
+    return (
+        isSelected ?
+            <CategorySelectOptionSelected>
+                <p>{name}</p><span>&gt;</span>
+            </CategorySelectOptionSelected> :
+
+            <CategorySelectOption onClick={() => { setDetailTab(name) }}>
+                <p>{name}</p><span>&gt;</span>
+            </CategorySelectOption>
+    )
 }
 
 export default CategoryCard;
