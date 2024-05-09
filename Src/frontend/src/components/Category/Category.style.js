@@ -4,6 +4,9 @@ import { colors } from "../../constants/Colors";
 const div = styled.div`
 box-sizing: border-box;
 `
+const form = styled.form`
+box-sizing: border-box;
+`
 
 export const Container = styled(div)`
 width: 600px;
@@ -38,6 +41,7 @@ width: 20%;
 export const CategoryShowCol = styled(div)`
 width: 80%;
 border-left: 1px solid ${colors.Grey};
+padding: 5px;
 `
 
 export const MainSelectOption = styled(div)`
@@ -91,4 +95,26 @@ span {
 export const CategorySelectOptionSelected = styled(CategorySelectOption)`
 background-color: ${colors.SelectedGrey};
 font-weight: 600;
+`
+
+export const CheckboxForm = styled(form)`
+display: flex;
+flex-wrap: wrap;
+align-content: flex-start;
+width: 100%;
+height: 100%;
+overflow: auto;
+`
+
+export const CheckboxContainer = styled(div)`
+width: 33%;
+height: 25%;
+display: flex;
+align-items: center;
+input {
+    zoom: 1.5;
+}
+label {
+    font-size: 16px;
+}
 `
