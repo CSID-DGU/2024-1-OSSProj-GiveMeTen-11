@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../css/login.css?after">
+    <style>
+     
+        body {
+            background-color: #f4f4f4; 
+        }
+        
+        .container {
+            background-color: #fff;
+            display: flex; 
+        }
+
+        .horizon1 {
+            width: 170px; 
+        }
+
+        .horizon2 {
+            width: 170px; 
+        }
+
+        .rectangle1 {
+            background-color: #FD7401;
+        }
+
+        .rectangle2 {
+            background-color: #FD7401;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .login_btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #FD7401;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .signup_btn {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            color: #FD7401;
+            border: 1px solid #FD7401 ;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>로그인 후, 동국대 알리미 서비스를 받으세요!</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="username" class="label-id">ID</label>
+                <input type="text" id="username" name="username" placeholder="Enter your ID" required>
+            </div>
+            <div class="rectangle1"></div>
+            <div class="form-group">
+                <label for="password" class="label-password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <div class="rectangle2"></div>
+            </div>
+            <button type="submit" class="login_btn">Login</button>
+            <hr class="horizon1"></hr>
+            <h2>or</h2>
+            <hr class="horizon2"></hr>
+            <button type="submit" class="signup_btn">Signup Now</button>
+            
+        </form>
+        <img src="../images/base.png" class="base" alt="Base Image">
+        <img src="../images/bell.png" class="bell" alt="Bell Image">
+        <img src="../images/dnow.png" class="dnow" alt="Dnow Image">
+        <img src="../images/logo.png" class="logo" alt="Logo Image">
+        <img src="../images/lock.png" class="lock" alt="Lock Image">
+        <img src="../images/face-id.png" class="face-id" alt="Face-id Image">
+    </div>
+</body>
+</html>

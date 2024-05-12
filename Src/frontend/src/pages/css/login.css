@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+body{
+    font-family: 'Poppins', sans-serif;
+    
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+h1{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+    color: black;
+    position:relative;
+    bottom: 190px;
+    left: 60px;
+}
+
+.container {
+    position: relative;
+    width: 1753px;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+}
+
+.rectangle1{
+    position:relative;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    top: 50px;
+    left: 40px;
+}
+
+.rectangle2{
+    position:relative;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    top: 45px;
+    left: 40px;
+}
+
+.label-id{
+    position: relative;
+    margin-top: 10px;
+}
+
+#username{
+    position:relative;
+    width: 410px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #F1F3F6;
+    top: 100px;
+    right: 320px;
+}
+
+#password {
+    position:relative;
+    width: 410px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #F1F3F6;
+    top: 95px;
+    right: 320px;
+}
+
+.form-group input::placeholder {
+    font-size: 16px;
+}
+
+.form-group label {
+    position:relative;
+    top: 90px;
+    right: 320px;
+}
+
+.login_btn{
+    position:relative;
+    height: 50px;
+    margin: 30px;
+    top: 50px;
+    right: 350px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.horizon1 {
+    position: relative;
+    border: none;
+    border-top: 2px solid #ccc;
+    width: 170px;
+    right: 440px;
+    top: 66px;  
+}
+
+h2{
+    font-size: 14px;
+    white-space: nowrap;
+    color: #ccc;
+    position:relative;
+    top: 42px;
+    right: 120px;
+}
+
+.horizon2 {
+    position: relative;
+    border: none;
+    border-top: 2px solid #ccc;
+    width: 170px;
+    right: 200px;
+    top: 20px; 
+}
+
+.signup_btn{
+    position:relative;
+    height: 50px;
+    top: 50px;
+    right: 320px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.base {
+    position:relative;
+    width: 1273px; 
+    height: 1000px;
+    right: 270px;
+}
+
+.bell{
+    position:relative;
+    bottom:260px;
+    right: 1970px;
+    width: 58px;
+    height: 58px;  
+}
+
+.dnow{
+    position:relative;  
+    bottom:260px;
+    right:1960px;
+    width: 265px; 
+    height: 81px; 
+}
+
+.logo{
+    position:relative;
+    bottom:450px;
+    right:840px;
+    width: 200px;
+    height: 69px;
+}
+
+.face-id{
+    position:relative;
+    bottom: 82px;
+    right:2174px;
+    width: 24px;
+    height: 24px;
+}
+
+.lock{
+    position:relative;
+    top:40px;
+    right: 2151px;
+    height: 24px;
+    width: 24px;
+}
+
+
