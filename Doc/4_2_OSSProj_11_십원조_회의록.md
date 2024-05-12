@@ -258,9 +258,9 @@
 - 액션 아이템
     1. 개발 현황 공유
         - 프론트엔드
-            - 카테고리 Card 기본 디자인 추가
+            - 카테고리 Card 기본 디자인 추가  
             ![image](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/fa9d448f-b165-49b5-9ad0-7397422573ca)
-            - 공지사항 Card 추가
+            - 공지사항 Card 추가  
             ![image](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/246df24f-b999-4487-a636-3703e4f89c84)
         - 백엔드
             - 회원관리 API 기능구현
