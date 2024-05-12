@@ -1,27 +1,34 @@
+# 🙋‍♂️ 2024-1-OSSProj-GiveMeTen-11
+
 <div><img src="https://capsule-render.vercel.app/api?type=waving&color=0:99cc99,100:009630&height=200&section=header&text=GiveMeTen&fontSize=90" /></div>
 
-
-### 2024-1-OSSProj-GiveMeTen-11 팀의 리파지토리입니다.
 - 팀 구성
     - (팀장) 전병현  
     - (팀원) 성민제
     - (팀원) 박주한
 
-# ➡️ Docs
+## ❗ 서비스 소개
+### 📢 동국대학교 알리미 서비스 DNOW
+![image](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/8bc66fd9-cb0d-42bd-b9e9-eac76e4b3ca0)
+
+- 동국대학교 공지사항 통합, 학사일정과 공지사항 알림기능에 대한 필요성
+    - 여러 페이지에 분산되어 있는 공지사항의 불편사항
+    - 공지사항을 찾는데 번거롭거나 필요하지 못한 경우가 빈번히 발생
+    - 등록금 납부일과 같이 중요한 학사 일정을 까먹는 경우
+- 동국대학교 학생들의 공지사항 및 학사일정 인지를 돕기 위한 알림 웹 애플리케이션 개발
+    
+
+## ➡️ 문서 바로가기
 ### 프로젝트 관리문서 바로가기
 - [범위 / 일정 관리](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/blob/main/Doc/4_1_OSSProj_11_%EC%8B%AD%EC%9B%90%EC%A1%B0_%EB%B2%94%EC%9C%84_%EC%9D%BC%EC%A0%95_%EC%9D%B4%EC%8A%88%EA%B4%80%EB%A6%AC.md)
 - [이슈 관리](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/issues)
 - [회의록](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/blob/main/Doc/4_2_OSSProj_11_%EC%8B%AD%EC%9B%90%EC%A1%B0_%ED%9A%8C%EC%9D%98%EB%A1%9D.md)
 - [제품의 구성, 배포 및 운영 관련 문서 자료](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/blob/main/Doc/4_3_OSSProj_11_%EC%8B%AD%EC%9B%90%EC%A1%B0_%EC%A0%9C%ED%92%88%EA%B5%AC%EC%84%B1%EB%B0%B0%ED%8F%AC%EC%9A%B4%EC%98%81%EC%9E%90%EB%A3%8C.md)
 
-# 🛠️ Tech
+## 🛠️ 기술 아키텍처
+![image](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/2acc470e-0822-4f59-aafb-51cea1cd0573)
 
-## FrameWork
-REACT
-<br/>
-DRF
-
-## 프로젝트 실행 방법
+## 📀 프로젝트 실행 방법
 ### 🖼️ FrontEnd
 #### frondend 폴더로 이동 후
 ```cmd
