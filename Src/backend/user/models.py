@@ -1,4 +1,5 @@
 from django.db import models
+from notice.models import Category
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 # 헬퍼 클래스
@@ -29,9 +30,11 @@ class UserManager(BaseUserManager):
 
 # AbstractBaseUser를 상속해서 유저 커스텀
 class User(AbstractBaseUser, PermissionsMixin):
+    no = models.AutoField(primary_key=True)
     userid = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=128)
     phone = models.CharField(max_length=30)
+    categories = models.ManyToManyField(Category, related_name='users')
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
