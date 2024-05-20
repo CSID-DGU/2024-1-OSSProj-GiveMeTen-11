@@ -44,7 +44,7 @@ class AuthAPIView(APIView):
     def post(self, request):
     	# 유저 인증
         user = authenticate(
-            username=request.data.get("username"), password=request.data.get("password")
+            username=request.data.get("userid"), password=request.data.get("password")
         )
         # 이미 회원가입 된 유저일 때
         if user is not None:
@@ -55,7 +55,7 @@ class AuthAPIView(APIView):
             access_token = str(token.access_token)
             res = Response(
                 {
-                    "user": serializer.data,
+                    # "user": serializer.data,
                     "message": "login success",
                     "token": {
                         "access": access_token,
