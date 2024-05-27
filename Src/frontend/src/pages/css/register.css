@@ -2,6 +2,7 @@
 
 .poppins-semibold {
     font-family: "Poppins", sans-serif;
+    font-weight: 600;
     font-style: normal;
   }
 
@@ -9,6 +10,7 @@ body{
     font-family: 'Poppins', sans-serif;
     font-size: 100%;
     line-height: 1.5;
+    background-color: #f4f4f4; 
 }
 
 h1{
@@ -28,6 +30,7 @@ h1{
     display: flex;
     align-items: center; 
     justify-content: flex-start;
+    background-color: #fff;
 }
 
 .rectangle1, .rectangle2, .rectangle3, .rectangle4{
@@ -38,6 +41,7 @@ h1{
     border-radius: 5px;
     top: 50px;
     left: 80px;
+    background-color: #FD7401;
 }
 
 #username{
@@ -51,6 +55,7 @@ h1{
     background-color: #F1F3F6;
     top: 100px;
     right: 280px;
+    
 }
 
 #password{
@@ -101,6 +106,8 @@ h1{
     position:relative;
     top: 90px;
     right: 280px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .signup_btn{
@@ -111,6 +118,13 @@ h1{
     right: 310px;
     font-size: 16px;
     font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    background-color: #FD7401;
+    color: white;
+    border: 1px solid #FD7401 ;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .horizon1 {
@@ -128,7 +142,7 @@ h2{
     color: #ccc;
     position:relative;
     top: 22px;
-    right: 80px;
+    right: 90px;
 }
 
 .horizon2 {
@@ -136,16 +150,24 @@ h2{
     border: none;
     border-top: 2px solid #ccc;
     width: 170px;
-    right: 160px; 
+    right: 170px;
+    padding: 10px;
 }
 
 .login_btn{
     position:relative;
     height: 50px;
-    top: 30px;
+    top: 20px;
     right: 280px;
     font-size: 16px;
     font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color: #FD7401;
+    border: 1px solid #FD7401 ;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .base {
@@ -181,7 +203,7 @@ h2{
 
 .face-id{
     position:relative;
-    bottom: 227px;
+    bottom: 237px;
     right:2134px;
     width: 24px;
     height: 24px;
@@ -189,7 +211,7 @@ h2{
 
 .lock{
     position:relative;
-    bottom: 98px;
+    bottom: 108px;
     right: 2111px;
     height: 24px;
     width: 24px;
@@ -197,7 +219,7 @@ h2{
 
 .check{
     position:relative;
-    top: 32px;
+    top: 22px;
     right: 2157px;
     height: 24px;
     width: 24px;
@@ -205,7 +227,7 @@ h2{
 
 .telephone{
     position:relative;
-    top: 160px;
+    top: 150px;
     right: 2183px;
     height: 24px;
     width: 24px;    
