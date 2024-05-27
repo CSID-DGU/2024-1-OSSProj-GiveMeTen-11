@@ -1,12 +1,16 @@
 # serializers.py
 
 from .models import User
+from notice.serializers import *
+
 from rest_framework import serializers
 
 class UserSerializer(serializers.ModelSerializer):
+    categories = CategorySerializer(many=True, read_only=True)
+
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ['userid', 'phone', 'categories']
 
     def create(self, validated_data):
         user = User.objects.create_user(
