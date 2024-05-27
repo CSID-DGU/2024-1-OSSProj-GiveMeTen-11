@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_crontab',
     # apps
     'user',
     'notice',
@@ -99,6 +100,10 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny', # 누구나 접근
     ),
 }
+
+CRONJOBS = [
+    ('* 17 * * *', 'notice.cron.Crawling', '>> /tmp/log/schedule.log'),
+]
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
