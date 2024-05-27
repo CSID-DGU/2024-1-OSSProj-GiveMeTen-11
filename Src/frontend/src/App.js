@@ -3,6 +3,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 import Main from './routes/Main/Main.js';
 import Login from './routes/Login.js'
 import Register from './routes/Register.js';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (

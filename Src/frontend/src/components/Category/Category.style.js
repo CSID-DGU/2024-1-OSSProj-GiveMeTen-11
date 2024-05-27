@@ -10,7 +10,7 @@ box-sizing: border-box;
 
 export const Container = styled(div)`
 width: 600px;
-height: 350px;
+height: 400px;
 background-color: ${colors.White};
 border: 1px solid ${colors.Grey};
 `

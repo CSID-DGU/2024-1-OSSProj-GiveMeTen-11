@@ -15,6 +15,7 @@ export const MonthText = styled.h2`
 font-size: 30px;
 margin: 10px;
 color: ${colors.White};
+font-weight: 600;
 `
 export const CardContainer = styled.div`
 background-color: ${colors.White};
