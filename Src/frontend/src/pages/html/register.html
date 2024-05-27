@@ -1,69 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">    
 <head>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Page</title>
-    <link rel="stylesheet" href="../css/signup.css">
-    <style>
-     
-        body {
-            background-color: #f4f4f4; 
-        }
-        
-        .container {
-            background-color: #fff;
-            display: flex; 
-        }
-
-        .horizon1 {
-            width: 170px; 
-        }
-
-        .horizon2 {
-            width: 170px; 
-        }
-
-        .rectangle1, .rectangle2, .rectangle3, .rectangle4 {
-            background-color: #FD7401;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .signup_btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #FD7401;
-            color: white;
-            border: 1px solid #FD7401 ;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .login_btn {
-            width: 100%;
-            padding: 10px;
-            background-color: white;
-            color: #FD7401;
-            border: 1px solid #FD7401 ;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-
-    </style>
+    <title>Register Page</title>
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
     <div class="container">
@@ -71,22 +16,22 @@
         <form action="#" method="post">
             <div class="form-group">
                 <label for="username" class="label-id">ID</label>
-                <input type="text" id="username" name="username" placeholder="Enter your ID" required>
+                <input type="text" id="username" name="username" placeholder="Enter your ID" required/>
                 <div class="rectangle1"></div>
             </div>
             <div class="form-group">
                 <label for="password" class="label-password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required/>
                 <div class="rectangle2"></div>
             </div>
             <div class="form-group">
                 <label for="confirm-password" class="label-confirmpassword">Confirm Password</label>
-                <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm your password" required>
+                <input type="password" id="password" name="confirmpassword" placeholder="Confirm your password" required/>
                 <div class="rectangle3"></div>
             </div>
             <div class="form-group">
                 <label for="phonenumber" class="label-phonenumber">Phone Number</label>
-                <input type="tel" id="phonenumber" name="phonenumber" placeholder="Enter your phone number" required>
+                <input type="tel" id="phonenumber" name="phonenumber" placeholder="Enter your phone number" required/>
                 <div class="rectangle4"></div>  `
             </div>
             <button type="submit" class="signup_btn">Signup</button>
@@ -94,7 +39,6 @@
             <h2>or</h2>
             <hr class="horizon2"></hr>
             <button type="submit" class="login_btn">Login Now</button>
-            
         </form>
         <img src="../images/base.png" class="base" alt="Base Image">
         <img src="../images/bell.png" class="bell" alt="Bell Image">

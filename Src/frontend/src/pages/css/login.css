@@ -8,7 +8,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    
+    background-color: #f4f4f4;
     font-size: 100%;
     line-height: 1.5;
 }
@@ -28,12 +28,14 @@ h1{
     position: relative;
     width: 1753px;
     display: flex;
+    background-color: #fff;
     align-items: center; 
     justify-content: flex-start;
 }
 
 .rectangle1{
     position:relative;
+    background-color: #FD7401;
     width: 50px;
     height: 50px;
     border: none;
@@ -44,6 +46,7 @@ h1{
 
 .rectangle2{
     position:relative;
+    background-color: #FD7401;
     width: 50px;
     height: 50px;
     border: none;
@@ -89,6 +92,8 @@ h1{
 
 .form-group label {
     position:relative;
+    display: block;
+    margin-bottom: 5px;
     top: 90px;
     right: 320px;
 }
@@ -101,6 +106,13 @@ h1{
     right: 350px;
     font-size: 16px;
     font-weight: 600;
+    background-color: #FD7401;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
 }
 
 .horizon1 {
@@ -137,6 +149,13 @@ h2{
     right: 320px;
     font-size: 16px;
     font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color: #FD7401;
+    border: 1px solid #FD7401 ;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .base {
