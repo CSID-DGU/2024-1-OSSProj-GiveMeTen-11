@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import basicNotice from '../../images/basicNotice.png'
-import classNotice from '../../images/classNotice.png'
+import basicNotice from '../../images/CategoryCard/basicNotice.png'
+import classNotice from '../../images/CategoryCard/classNotice.png'
 import { MainSelectBtn } from './MainRowComponents';
 import { CategoryShowTab, CategorySelectTab } from './CategorySelectRowComponents'
 import { CategorySelectRow, CategoryShowCol, CategoryShowRow, Container, MainSelectRow } from './Category.style';
