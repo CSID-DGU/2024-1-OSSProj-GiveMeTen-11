@@ -28,7 +28,7 @@ margin: auto;
 border-bottom-right-radius: 18px; */
 `
 export const Card = styled.div`
-height: 25%;
+min-height: 25%;
 text-align: left;
 border-bottom: 1px solid ${colors.Grey}
 `
