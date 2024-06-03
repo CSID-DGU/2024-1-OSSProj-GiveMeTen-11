@@ -1,15 +1,37 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import basicNotice from '../../images/CategoryCard/basicNotice.png'
 import classNotice from '../../images/CategoryCard/classNotice.png'
 import { MainSelectBtn } from './MainRowComponents';
 import { CategoryShowTab, CategorySelectTab } from './CategorySelectRowComponents'
-import { CategorySummaryTab } from './CategoryShowRowComponents'
+import { CategorySummaryTab, CategorySubmitTab } from './CategoryShowRowComponents'
 import { CategorySelectRow, CategoryShowCol, CategoryShowRow, Container, MainSelectRow } from './Category.style';
 
 function CategoryCard() {
     let [mainTab, setMainTab] = useState('')
     let [detailTab, setDetailTab] = useState('')
     let [selectedCategory, setSelectedCategory] = useState([])
+
+    let data = {
+        "categories": [
+            {
+                "big": "학사공지",
+                "detail": "전체",
+                "url": "https://www.dongguk.edu/article/HAKSANOTICE/list",
+                "title": null,
+                "author": null,
+                "date": null
+            }
+        ]
+    }
+
+    useEffect(() => {
+        // 읽어들인 카테고리 정보 반영
+        data["categories"].map((a) => {
+            let temp = a["big"] + " - " + a["detail"]
+            setSelectedCategory([...selectedCategory, temp])
+        })
+    }, [])
+
 
     return (
         <Container>
@@ -24,7 +46,8 @@ function CategoryCard() {
                 </CategoryShowCol>
             </CategorySelectRow>
             <CategoryShowRow>
-                <CategorySummaryTab selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+                <CategorySummaryTab selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+                <CategorySubmitTab selectedCategory={selectedCategory}/>
             </CategoryShowRow>
         </Container>
     )

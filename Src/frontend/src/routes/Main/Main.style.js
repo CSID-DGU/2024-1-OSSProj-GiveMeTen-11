@@ -11,7 +11,7 @@ position: relative;
 `
 
 export const ConponentContainer = styled(div)`
-width: 1000px;
+width: 1200px;
 margin: auto;
 `
 

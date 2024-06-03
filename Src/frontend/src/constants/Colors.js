@@ -8,5 +8,6 @@ export const colors = {
     Grey: '#808080',
     SelectedGrey: '#d7d6dc',
     Black: '#373150',
+    Black_Dark: '#2c2842',
     Orange_Light: '#ffd000',
   };
