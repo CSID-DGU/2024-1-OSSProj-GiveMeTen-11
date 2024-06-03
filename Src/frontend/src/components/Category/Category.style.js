@@ -79,6 +79,7 @@ height: 15%;
 padding: 5px;
 display: flex;
 justify-content: space-between;
+align-items: center;
 cursor: pointer;
 cursor: pointer;
 transition: all .25s;
@@ -90,6 +91,7 @@ transition: all .25s;
     background-color: grey;
 }
 p {
+    font-size: 14px;
     margin: 0;
 }
 span {
@@ -119,7 +121,7 @@ const CheckboxStyle = styled(div)`
 cursor: pointer;
 width: 90%;
 height: 90%;
-font-size: 16px;
+font-size: 12px;
 border-radius: 10px;
 border: 1px solid black;
 margin-left: auto;
@@ -130,7 +132,7 @@ box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.2);
 transition: all 0.5s;
 
 p {
-    margin-top: 18px;
+    margin-top: 20px;
 }
 `
 
