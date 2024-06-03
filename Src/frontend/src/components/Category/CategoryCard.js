@@ -3,6 +3,7 @@ import basicNotice from '../../images/CategoryCard/basicNotice.png'
 import classNotice from '../../images/CategoryCard/classNotice.png'
 import { MainSelectBtn } from './MainRowComponents';
 import { CategoryShowTab, CategorySelectTab } from './CategorySelectRowComponents'
+import { CategorySummaryTab } from './CategoryShowRowComponents'
 import { CategorySelectRow, CategoryShowCol, CategoryShowRow, Container, MainSelectRow } from './Category.style';
 
 function CategoryCard() {
@@ -19,10 +20,12 @@ function CategoryCard() {
             <CategorySelectRow>
                 <CategorySelectTab mainTab={mainTab} detailTab={detailTab} setDetailTab={setDetailTab}></CategorySelectTab>
                 <CategoryShowCol>
-                    <CategoryShowTab detailTab={detailTab}></CategoryShowTab>
+                    <CategoryShowTab detailTab={detailTab} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}></CategoryShowTab>
                 </CategoryShowCol>
             </CategorySelectRow>
-            <CategoryShowRow></CategoryShowRow>
+            <CategoryShowRow>
+                <CategorySummaryTab selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+            </CategoryShowRow>
         </Container>
     )
 }
