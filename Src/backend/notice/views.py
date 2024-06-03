@@ -153,8 +153,8 @@ class CrawlAPIView(APIView):
             
             # 새로운 공지사항이 올라오게 되면 정보 바꿈
             if category.title != new_title:
-                api_key = ""
-                api_secret = ""
+                api_key = "NCSWYWX6SCC9ERAA"
+                api_secret = "16VAIUYZRXY9LVE7ZT62OLRD4QAPT6BU"
 
                 ## 4 params(to, from, type, text) are mandatory. must be filled
                 params = dict()
