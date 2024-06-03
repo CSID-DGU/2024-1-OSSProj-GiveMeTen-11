@@ -21,7 +21,7 @@ class SignUpAPIView(APIView):
             access_token = str(token.access_token)
             res = Response(
                 {
-                    "user": serializer.data,
+                    # "user": serializer.data,
                     "message": "register successs",
                     "token": {
                         "access": access_token,
