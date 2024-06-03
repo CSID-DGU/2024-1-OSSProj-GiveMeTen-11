@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import base from '../images/LoginRegister/base.png';
 import bell from '../images/LoginRegister/bell.png';
@@ -187,39 +188,110 @@ const Image = styled.img`
 `;
 
 function Register() {
+  const navigate = useNavigate();
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  const validate = () => {
+    const idRegex = /^[a-zA-Z0-9]{6,12}$/;
+    const passwordRegex = /^[a-zA-Z0-9!@#$%^&*]{6,12}$/;
+    const phoneNumberRegex = /^010\d{8}$/;
+    let valid = true;
+   
+
+    if (!idRegex.test(id)) {
+      alert('ID는 영문, 숫자만 사용해서 6~12자리로 입력하세요.');
+      valid = false;
+    }
+  
+    if (!passwordRegex.test(password)) {
+      alert('비밀번호는 영문, 숫자, 특수문자만 사용해서 6~12자리로 입력하세요.');
+      valid = false;
+    }
+  
+    if (password !== confirmPassword) {
+      alert('비밀번호가 일치하지 않습니다.');
+      valid = false;
+    }
+  
+    if (!phoneNumberRegex.test(phoneNumber)) {
+      alert('전화번호는 010으로 시작하는 11자리로 입력하세요.');
+      valid = false;
+    }
+  
+    return valid;
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      alert('회원가입이 완료되었습니다.');
+      navigate('/login');
+    }
+  };
+
   return (
     <Container>
       <Title>회원이 되어 필요한 알림을 받으세요</Title>
-      <Form action="#" method="post">
+      <Form onSubmit={handleSubmit}>
         <FormGroup>
           <LabelID htmlFor="username" className="label-id">ID</LabelID>
-          <Input type="text" id="username" name="username" placeholder="  Enter your ID" required />
+          <Input 
+            type="text" 
+            id="username" 
+            name="username" 
+            placeholder="  Enter your ID" 
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            required 
+          />
           <Rectangle className="rectangle1" />
         </FormGroup>
         <FormGroup>
           <LabelPassword htmlFor="password" className="label-password">Password</LabelPassword>
-          <Input type="password" id="password" name="password" placeholder="  Enter your password" required />
+          <Input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="  Enter your password" 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required/>
           <Rectangle className="rectangle2" />
         </FormGroup>
         <FormGroup>
           <LabelConfirmPassword htmlFor="confirmpassword" className="label-confirmpassword">Confirm Password</LabelConfirmPassword>
-          <Input type="password" id="confirmpassword" name="confirmpassword" placeholder="  Confirm your password" required />
+          <Input type="password" 
+                 id="confirmpassword" 
+                 name="confirmpassword" 
+                 placeholder="  Confirm your password" 
+                 value={confirmPassword} 
+                 onChange={(e) => setConfirmPassword(e.target.value)} 
+                 required/>
           <Rectangle className="rectangle3" />
         </FormGroup>
         <FormGroup>
           <LabelPhoneNumber htmlFor="phonenumber" className="label-phonenumber">Phone Number</LabelPhoneNumber>
-          <Input type="tel" id="phonenumber" name="phonenumber" placeholder="  Enter your phone number" required />
+          <Input type="tel" 
+                 id="phonenumber" 
+                 name="phonenumber" 
+                 placeholder="  Enter your phone number" 
+                 value={phoneNumber} 
+                 onChange={(e) => setPhoneNumber(e.target.value)}
+                required/>
           <Rectangle className="rectangle4" />
         </FormGroup>
         <SignupButton type="submit">Signup</SignupButton>
-        <Horizon  />
-        <Text>or</Text>
+        <Horizon />
+        <Text>OR</Text>
         <Horizon second />
-        <LoginButton type="submit">Login Now</LoginButton>
+        <LoginButton type="button" signup onClick={() => navigate('/login')}>Login Now</LoginButton>
       </Form>
       <Image src={base} alt="Base Image" base />
       <Image src={bell} alt="Bell Image" bell />
-      <Image src={dnow} alt="Dnow Image"dnow />
+      <Image src={dnow} alt="Dnow Image" dnow />
       <Image src={logo} alt="Logo Image" logo />
       <Image src={face_id} alt="Face-id Image" face_id />
       <Image src={lock} alt="Lock Image" lock />
