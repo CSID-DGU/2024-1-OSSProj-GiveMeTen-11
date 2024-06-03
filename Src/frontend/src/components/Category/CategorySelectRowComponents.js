@@ -1,22 +1,23 @@
-import { CategorySelectCol, CategorySelectOption, CategorySelectOptionSelected, CheckboxContainer, CheckboxForm } from "./Category.style";
+import { CategorySelectCol, CategorySelectOption, CategorySelectOptionSelected, CheckboxContainer, CheckboxForm, CheckboxSelectedContainer, CategoryGrid } from "./Category.style";
 
 
-function CategoryShowTab({ detailTab }) {
+function CategoryShowTab({ detailTab, selectedCategory, setSelectedCategory }) {
     let checkbox = {
-        '':[],
-        '일반공지': ['전체'],
-        '학사공지': ['수업/성적', '학적', '프로그램 및 특강', '계절학기', '교직', '대학원', '기타', '국내학점교류', '등록'],
-        '입시공지': ['전체'],
-        '공과대학': ['전체'],
-        '이과대학': ['전체'],
-        '문과대학': ['전체']
+        '': [],
+        '일반공지': ['일반공지-전체'],
+        '학사공지': ['학사공지-수업/성적', '학사공지-학적', '학사공지-프로그램 및 특강', '학사공지-계절학기', '학사공지-교직', '학사공지-대학원', '학사공지-기타', '학사공지-국내학점교류', '학사공지-등록'],
+        '입시공지': ['입시공지-전체'],
+        '공과대학': ['공과대학-전체'],
+        '이과대학': ['이과대학-전체'],
+        '문과대학': ['문과대학-전체']
     }[detailTab]
     return (
         <CheckboxForm>
             {checkbox.map((a) => {
-                return (<CategoryCheckbox name={a}></CategoryCheckbox>)
+                let selected = selectedCategory.includes(a)
+                return (<CategoryCheckGrid name={a} selected={selected} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}></CategoryCheckGrid>)
             }
-        )}
+            )}
         </CheckboxForm>
     )
 }
@@ -53,13 +54,28 @@ function CategorySelectBtn({ name, detailTab, setDetailTab }) {
     )
 }
 
-function CategoryCheckbox({ name }) {
+function CategoryCheckGrid({ name, selected, selectedCategory, setSelectedCategory }) {
     return (
-        <CheckboxContainer>
-            <input id={name} type='checkbox'></input>
-            <label for={name}>{name}</label>
-        </CheckboxContainer>
+        <CategoryGrid>
+            <CategoryCheckbox name={name} selected={selected} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+        </CategoryGrid>
     )
 }
 
-export {CategorySelectBtn, CategoryShowTab, CategorySelectTab, CategoryCheckbox};
+function CategoryCheckbox({ name, selected, selectedCategory, setSelectedCategory }) {
+    return (
+        selected ?
+            <CheckboxSelectedContainer onClick={()=>{
+                setSelectedCategory(selectedCategory.filter((e)=>e !== name))
+            }}>
+                <p>{name}</p>
+            </CheckboxSelectedContainer> :
+            <CheckboxContainer onClick={()=>{
+                setSelectedCategory([...selectedCategory, name])
+            }}>
+                <p>{name}</p>
+            </CheckboxContainer>
+    )
+}
+
+export { CategoryShowTab, CategorySelectTab };
