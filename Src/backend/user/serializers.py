@@ -19,3 +19,10 @@ class UserSerializer(serializers.ModelSerializer):
             phone = validated_data['phone']
         )
         return user
+
+class UserCategorySerializer(serializers.ModelSerializer):
+    categories = CategorySerializer(many=True)
+    
+    class Meta:
+        model = User
+        fields = ['categories']

@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from .models import Category
 from .serializers import CategorySerializer, CategorySaveSerializer
-from user.serializers import UserSerializer
+from user.serializers import UserSerializer, UserCategorySerializer
 
 from sdk.api.message import Message
 from sdk.exceptions import CoolsmsException
@@ -189,7 +189,7 @@ class UserCategoryAPIView(APIView):
 
     def get(self, request):
         user = request.user
-        serializer = UserSerializer(user)
+        serializer = UserCategorySerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -214,22 +214,3 @@ class UserCategorySaveAPIView(APIView):
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
         return Response({"message":"Save Complete"}, status=status.HTTP_200_OK)
-
-    # def put(self, request):
-    #     user = request.user
-    #     user.categories.clear()  # 유저의 모든 categories 삭제
-        
-    #     categories_data = request.data.get('categories', [])
-    #     for category_data in categories_data:
-    #         serializer = CategorySerializer(data=category_data)
-    #         if serializer.is_valid():
-    #             big = serializer.validated_data['big']
-    #             detail = serializer.validated_data['detail']
-                
-    #             category = Category.objects.get(big=big, detail=detai
-    #             user.categories.add(category)
-                
-    #         else:
-    #             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
-    #     return Response({"message": "User categories updated successfully."}, status=status.HTTP_200_OK)     
