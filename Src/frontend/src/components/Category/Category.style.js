@@ -32,6 +32,10 @@ display: flex;
 export const CategoryShowRow = styled(div)`
 width: 100%;
 height: 25%;
+padding: 5px;
+display: flex;
+flex-wrap: wrap;
+overflow-y: auto;
 `
 
 export const CategorySelectCol = styled(div)`
@@ -106,15 +110,53 @@ height: 100%;
 overflow: auto;
 `
 
-export const CheckboxContainer = styled(div)`
+export const CategoryGrid = styled(div)`
 width: 33%;
-height: 25%;
+height: 30%;
+`
+
+const CheckboxStyle = styled(div)`
+cursor: pointer;
+width: 90%;
+height: 90%;
+font-size: 12px;
+border-radius: 10px;
+border: 1px solid black;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 5px;
+box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.2);
+-webkit-box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.2);
+-moz-box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.);
+transition: all 0.5s;
+`
+
+export const CheckboxContainer = styled(CheckboxStyle)`
+&:hover {
+    background: ${colors.Orange_Light};
+}
+`
+
+export const CheckboxSelectedContainer = styled(CheckboxStyle)`
+color: ${colors.White};
+background: ${colors.Orange};
+font-weight: 600;
+border: 2px solid black;
+`
+
+export const CheckboxSummaryCardContainer = styled(div)`
 display: flex;
 align-items: center;
-input {
-    zoom: 1.5;
-}
-label {
-    font-size: 16px;
+height: 35%;
+font-size: 12px;
+margin: 5px;
+& > button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: 500;
+    & > p {
+        color: ${colors.Red};
+    }
 }
 `

@@ -7,6 +7,7 @@ box-sizing: border-box;
 const MainFont = styled.p`
 font-size: 40px;
 font-weight: 600;
+margin: 0;
 `
 
 export const FontContainer = styled(div)`

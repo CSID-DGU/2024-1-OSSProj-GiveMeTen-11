@@ -13,6 +13,7 @@ max-width: 1300px;
 margin: auto;
 display: flex;
 justify-content: space-between;
+align-items: center;
 & img {
     margin-left: 10px;
     height: 100%;
@@ -20,20 +21,18 @@ justify-content: space-between;
 `
 
 export const OrangeBtn = styled(button)`
+cursor: pointer;
 background: ${colors.Orange};
 color: ${colors.White};
 border: none;
 border-radius: 5px;
-padding: 5px 30px 5px 30px;
+padding: 20px 30px 20px 30px;
+font-size: 20px;
 transition: all 0.2s;
 font-weight: 600;
 box-shadow: 5px 5px 5px 0px rgba(254,142,3,0.35);
 -webkit-box-shadow: 5px 5px 5px 0px rgba(254,142,3,0.35);
 -moz-box-shadow: 5px 5px 5px 0px rgba(254,142,3,0.35);
-
-& > p {
-    margin: 0;
-}
 
 &:hover {
     background: ${colors.Orange_Dark};
@@ -43,6 +42,10 @@ box-shadow: 5px 5px 5px 0px rgba(254,142,3,0.35);
 }
 `
 
+export const LeftCol = styled(div)`
+display: flex;
+height: 100%;
+`
 
 export const RightCol = styled(div)`
 & > * {
