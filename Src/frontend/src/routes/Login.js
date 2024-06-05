@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import baseImage from '../images/LoginRegister/base.png';
@@ -7,7 +7,6 @@ import dnowImage from '../images/LoginRegister/dnow.png';
 import logoImage from '../images/LoginRegister/logo.png';
 import lockImage from '../images/LoginRegister/lock.png';
 import faceIdImage from '../images/LoginRegister/face-id.png';
-
 
 const Container = styled.div`
   position: relative;
@@ -137,21 +136,73 @@ const Image = styled.img`
   top: ${props => props.lock ? '20px' : 'auto'};
 `;
 
+const Click = styled.div`
+cursor: pointer;
+display: flex;
+align-items: center;
+`
+
 function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const userData = {
+      userid: username,
+      password: password,
+    };
+
+    try {
+      const response = await fetch('http://15.164.59.41/api/v1/user/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        navigate('/');
+      } else {
+        alert('로그인에 실패했습니다. 다시 확인해주세요.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('로그인 중 오류가 발생했습니다. 다시 시도해주세요.');
+    }
+  };
+
   return (
     <Container>
       <Heading>로그인 후, 동국대 알리미 서비스를 받으세요!</Heading>
-      <form action="#" method="post">
+      <form onSubmit={handleSubmit}>
         <FormGroup>
           <LabelID htmlFor="username">ID</LabelID>
-          <Input type="text" id="username" name="username" placeholder="  Enter your ID" required />
+          <Input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="  Enter your ID"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
         </FormGroup>
         <Rectangle1 />
         <FormGroup>
           <LabelPassword htmlFor="password">Password</LabelPassword>
-          <Input type="password" id="password" name="password" placeholder="  Enter your password" required />
+          <Input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="  Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
           <Rectangle2 />
         </FormGroup>
         <Button type="submit">Login</Button>
@@ -161,8 +212,10 @@ function Login() {
         <Button type="button" signup onClick={() => navigate('/register')}>Signup Now</Button>
       </form>
       <Image src={baseImage} base alt="Base Image" />
-      <Image src={bellImage} bell alt="Bell Image" />
-      <Image src={dnowImage} dnow alt="Dnow Image" />
+      <Click onClick={() => { navigate('/') }}>
+        <Image src={bellImage} bell alt="Bell Image" />
+        <Image src={dnowImage} dnow alt="Dnow Image" />
+      </Click>
       <Image src={logoImage} logo alt="Logo Image" />
       <Image src={lockImage} lock alt="Lock Image" />
       <Image src={faceIdImage} faceid alt="Face-id Image" />

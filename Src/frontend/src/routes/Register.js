@@ -161,30 +161,36 @@ const LoginButton = styled.button`
   cursor: pointer;
 `;
 
+const Click = styled.div`
+cursor: pointer;
+display: flex;
+align-items: center;
+`;
+
 const Image = styled.img`
   position: relative;
-  width: ${props => props.base ? '1018px' :props.bell ? '46px' :props.dnow ? '220px' :props.logo ? '160px' :'19px'};
-  height: ${props => props.base ? '800px' :props.bell ? '46px' :props.dnow ? '67px' :props.logo ? '55px' :'19px'};
-  right: ${props => 
-    props.base ? '190.5px' : 
-    props.bell ? '1544px' : 
-    props.dnow ? '1536px' : 
-    props.logo ? '614.5px' : 
-    props.face_id ? '1702px' : 
-    props.lock ? '1720px' : 
-    props.check ? '1738px' : 
-    props.telephone ? '1758px' : 
-    'auto'};
-  bottom: ${props => 
-    props.bell || props.dnow ? '304px' : 
-    props.logo ? '360px' : 
-    props.lock ? '78px' :
-    props.face_id ? '173px' : 
-    'auto'};
-  top: ${props => 
-    props.check ? '17px' : 
-    props.telephone ? '112px' : 
-    'auto'};
+  width: ${props => props.base ? '1018px' : props.bell ? '46px' : props.dnow ? '220px' : props.logo ? '160px' : '19px'};
+  height: ${props => props.base ? '800px' : props.bell ? '46px' : props.dnow ? '67px' : props.logo ? '55px' : '19px'};
+  right: ${props =>
+    props.base ? '190.5px' :
+      props.bell ? '1544px' :
+        props.dnow ? '1536px' :
+          props.logo ? '614.5px' :
+            props.face_id ? '1702px' :
+              props.lock ? '1720px' :
+                props.check ? '1738px' :
+                  props.telephone ? '1758px' :
+                    'auto'};
+  bottom: ${props =>
+    props.bell || props.dnow ? '304px' :
+      props.logo ? '360px' :
+        props.lock ? '78px' :
+          props.face_id ? '173px' :
+            'auto'};
+  top: ${props =>
+    props.check ? '17px' :
+      props.telephone ? '112px' :
+        'auto'};
 `;
 
 function Register() {
@@ -199,36 +205,59 @@ function Register() {
     const passwordRegex = /^[a-zA-Z0-9!@#$%^&*]{6,12}$/;
     const phoneNumberRegex = /^010\d{8}$/;
     let valid = true;
-   
+
 
     if (!idRegex.test(id)) {
       alert('ID는 영문, 숫자만 사용해서 6~12자리로 입력하세요.');
       valid = false;
     }
-  
+
     if (!passwordRegex.test(password)) {
       alert('비밀번호는 영문, 숫자, 특수문자만 사용해서 6~12자리로 입력하세요.');
       valid = false;
     }
-  
+
     if (password !== confirmPassword) {
       alert('비밀번호가 일치하지 않습니다.');
       valid = false;
     }
-  
+
     if (!phoneNumberRegex.test(phoneNumber)) {
       alert('전화번호는 010으로 시작하는 11자리로 입력하세요.');
       valid = false;
     }
-  
+
     return valid;
   };
-  
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      alert('회원가입이 완료되었습니다.');
-      navigate('/login');
+      const userData = {
+        userid: id,
+        password: password,
+        phone: phoneNumber
+      };
+
+      try {
+        const response = await fetch('http://15.164.59.41/api/v1/user/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userData),
+          mode: 'cors'
+        });
+        if (response.ok) {
+          alert('회원가입이 완료되었습니다.');
+          navigate('/login');
+        } else {
+          alert('회원가입에 실패했습니다. 다시 시도해주세요.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('회원가입 중 오류가 발생했습니다. 다시 시도해주세요.');
+      }
     }
   };
 
@@ -238,49 +267,49 @@ function Register() {
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <LabelID htmlFor="username" className="label-id">ID</LabelID>
-          <Input 
-            type="text" 
-            id="username" 
-            name="username" 
-            placeholder="  Enter your ID" 
+          <Input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="  Enter your ID"
             value={id}
             onChange={(e) => setId(e.target.value)}
-            required 
+            required
           />
           <Rectangle className="rectangle1" />
         </FormGroup>
         <FormGroup>
           <LabelPassword htmlFor="password" className="label-password">Password</LabelPassword>
-          <Input 
-            type="password" 
-            id="password" 
-            name="password" 
-            placeholder="  Enter your password" 
+          <Input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="  Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required/>
+            required />
           <Rectangle className="rectangle2" />
         </FormGroup>
         <FormGroup>
           <LabelConfirmPassword htmlFor="confirmpassword" className="label-confirmpassword">Confirm Password</LabelConfirmPassword>
-          <Input type="password" 
-                 id="confirmpassword" 
-                 name="confirmpassword" 
-                 placeholder="  Confirm your password" 
-                 value={confirmPassword} 
-                 onChange={(e) => setConfirmPassword(e.target.value)} 
-                 required/>
+          <Input type="password"
+            id="confirmpassword"
+            name="confirmpassword"
+            placeholder="  Confirm your password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required />
           <Rectangle className="rectangle3" />
         </FormGroup>
         <FormGroup>
           <LabelPhoneNumber htmlFor="phonenumber" className="label-phonenumber">Phone Number</LabelPhoneNumber>
-          <Input type="tel" 
-                 id="phonenumber" 
-                 name="phonenumber" 
-                 placeholder="  Enter your phone number" 
-                 value={phoneNumber} 
-                 onChange={(e) => setPhoneNumber(e.target.value)}
-                required/>
+          <Input type="tel"
+            id="phonenumber"
+            name="phonenumber"
+            placeholder="  Enter your phone number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            required />
           <Rectangle className="rectangle4" />
         </FormGroup>
         <SignupButton type="submit">Signup</SignupButton>
@@ -290,8 +319,10 @@ function Register() {
         <LoginButton type="button" signup onClick={() => navigate('/login')}>Login Now</LoginButton>
       </Form>
       <Image src={base} alt="Base Image" base />
-      <Image src={bell} alt="Bell Image" bell />
-      <Image src={dnow} alt="Dnow Image" dnow />
+      <Click onClick={() => { navigate('/') }}>
+        <Image src={bell} bell alt="Bell Image" />
+        <Image src={dnow} dnow alt="Dnow Image" />
+      </Click>
       <Image src={logo} alt="Logo Image" logo />
       <Image src={face_id} alt="Face-id Image" face_id />
       <Image src={lock} alt="Lock Image" lock />

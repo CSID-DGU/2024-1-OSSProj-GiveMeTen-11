@@ -6,24 +6,12 @@ import { CategoryShowTab, CategorySelectTab } from './CategorySelectRowComponent
 import { CategorySummaryTab, CategorySubmitTab } from './CategoryShowRowComponents'
 import { CategorySelectRow, CategoryShowCol, CategoryShowRow, Container, MainSelectRow } from './Category.style';
 
-function CategoryCard() {
+function CategoryCard({data}) {
     let [mainTab, setMainTab] = useState('')
     let [detailTab, setDetailTab] = useState('')
     let [selectedCategory, setSelectedCategory] = useState([])
 
-    let data = {
-        "categories": [
-            {
-                "big": "학사공지",
-                "detail": "전체",
-                "url": "https://www.dongguk.edu/article/HAKSANOTICE/list",
-                "title": null,
-                "author": null,
-                "date": null
-            }
-        ]
-    }
-
+    data = data
     useEffect(() => {
         // 읽어들인 카테고리 정보 반영
         data["categories"].map((a) => {
