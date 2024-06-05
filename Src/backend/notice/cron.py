@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 from .models import Category
 from sdk.api.message import Message
 from sdk.exceptions import CoolsmsException
+def hello():
+    print('hi')
 
 def Crawling():
     categories = Category.objects.all()
@@ -141,31 +143,31 @@ def Crawling():
             new_author = author
         
         # 새로운 공지사항이 올라오게 되면 문자전송
-        if category.title != new_title:
-            api_key = config('API_KEY')
-            api_secret = config('API_SECRET')
+        # if category.title != new_title:
+        #     api_key = config('API_KEY')
+        #     api_secret = config('API_SECRET')
 
-            for user in category.users.all():
-                params = {
-                    'type': 'sms',
-                    'to': user.phone,
-                    'from': config('ADMIN_PHONE'),
-                    'text': f"[동국대알리미]{category.big}/{category.detail}\n{new_title}"
-                }
+        #     for user in category.users.all():
+        #         params = {
+        #             'type': 'sms',
+        #             'to': user.phone,
+        #             'from': config('ADMIN_PHONE'),
+        #             'text': f"[동국대알리미]{category.big}/{category.detail}\n{new_title}"
+        #         }
 
-                cool = Message(api_key, api_secret)
-                try:
-                    response = cool.send(params)
-                    print("Success Count : %s" % response['success_count'])
-                    print("Error Count : %s" % response['error_count'])
-                    print("Group ID : %s" % response['group_id'])
+        #         cool = Message(api_key, api_secret)
+        #         try:
+        #             response = cool.send(params)
+        #             print("Success Count : %s" % response['success_count'])
+        #             print("Error Count : %s" % response['error_count'])
+        #             print("Group ID : %s" % response['group_id'])
 
-                    if "error_list" in response:
-                        print("Error List : %s" % response['error_list'])
+        #             if "error_list" in response:
+        #                 print("Error List : %s" % response['error_list'])
 
-                except CoolsmsException as e:
-                    print("Error Code : %s" % e.code)
-                    print("Error Message : %s" % e.msg)
+        #         except CoolsmsException as e:
+        #             print("Error Code : %s" % e.code)
+        #             print("Error Message : %s" % e.msg)
             
             category.title = new_title
             category.date = new_date
