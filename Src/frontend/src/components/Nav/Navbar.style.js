@@ -45,6 +45,7 @@ box-shadow: 5px 5px 5px 0px rgba(254,142,3,0.35);
 export const LeftCol = styled(div)`
 display: flex;
 height: 100%;
+cursor: pointer;
 `
 
 export const RightCol = styled(div)`

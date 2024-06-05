@@ -4,7 +4,7 @@ import { CategorySelectCol, CategorySelectOption, CategorySelectOptionSelected, 
 function CategoryShowTab({ detailTab, selectedCategory, setSelectedCategory }) {
     let checkbox = {
         '': [],
-        '일반공지': ['전체'],
+        '일반공지': ['전체', '블로그'],
         '학사공지': ['전체', '수업/성적', '학적', '프로그램 및 특강', '계절학기', '교직', '대학원', '기타', '국내학점교류', '등록'],
         '입시공지': ['전체'],
         '장학공지': ['전체'],
