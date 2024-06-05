@@ -1,21 +1,23 @@
 import requests
 from decouple import config
 from bs4 import BeautifulSoup
+from decouple import config
 
 from .models import Category
+
 from sdk.api.message import Message
 from sdk.exceptions import CoolsmsException
-def hello():
-    print('hi')
+from apscheduler.schedulers.background import BackgroundScheduler
+scheduler = BackgroundScheduler()
 
-def Crawling():
+def update_data():
     categories = Category.objects.all()
     for category in categories:
         response = requests.get(category.url)
         if response.status_code == 200:
             html = response.text
             soup = BeautifulSoup(html,'html.parser')
-
+        print(category.big + '/' + category.detail)
         contents_1_big = ['바이오시스템대학', '예술대학']
         contents_1_detail = ['바이오환경과학과', '식품생명공학과', '연극학부']
 
@@ -142,34 +144,36 @@ def Crawling():
         else:
             new_author = author
         
-        # 새로운 공지사항이 올라오게 되면 문자전송
-        # if category.title != new_title:
-        #     api_key = config('API_KEY')
-        #     api_secret = config('API_SECRET')
+        #새로운 공지사항이 올라오게 되면 문자전송
+        if category.title != new_title:
+            api_key = config('API_KEY')
+            api_secret = config('API_SECRET')
 
-        #     for user in category.users.all():
-        #         params = {
-        #             'type': 'sms',
-        #             'to': user.phone,
-        #             'from': config('ADMIN_PHONE'),
-        #             'text': f"[동국대알리미]{category.big}/{category.detail}\n{new_title}"
-        #         }
+            for user in category.users.all():
+                params = {
+                    'type': 'sms',
+                    'to': user.phone,
+                    'from': config('ADMIN_PHONE'),
+                    'text': f"[동국대알리미]{category.big}/{category.detail}\n{new_title}"
+                }
 
-        #         cool = Message(api_key, api_secret)
-        #         try:
-        #             response = cool.send(params)
-        #             print("Success Count : %s" % response['success_count'])
-        #             print("Error Count : %s" % response['error_count'])
-        #             print("Group ID : %s" % response['group_id'])
+                cool = Message(api_key, api_secret)
+                try:
+                    response = cool.send(params)
+                    print("Success Count : %s" % response['success_count'])
+                    print("Error Count : %s" % response['error_count'])
+                    print("Group ID : %s" % response['group_id'])
 
-        #             if "error_list" in response:
-        #                 print("Error List : %s" % response['error_list'])
+                    if "error_list" in response:
+                        print("Error List : %s" % response['error_list'])
 
-        #         except CoolsmsException as e:
-        #             print("Error Code : %s" % e.code)
-        #             print("Error Message : %s" % e.msg)
+                except CoolsmsException as e:
+                    print("Error Code : %s" % e.code)
+                    print("Error Message : %s" % e.msg)
             
             category.title = new_title
             category.date = new_date
             category.author = new_author
             category.save()
+
+scheduler.add_job(update_data, 'interval', minutes=3)

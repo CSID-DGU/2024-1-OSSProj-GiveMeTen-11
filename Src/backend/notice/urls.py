@@ -4,5 +4,4 @@ from .views import *
 urlpatterns = [
     path('save', UserCategorySaveAPIView.as_view()),
     path('check', UserCategoryAPIView.as_view()),
-    path('crawl', CrawlAPIView.as_view()),
 ]

@@ -42,12 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',
     'rest_framework_simplejwt',
-    'django_crontab',
     'corsheaders',
+    'django_apscheduler',
     # apps
     'user',
     'notice',
-    
 ]
 
 MIDDLEWARE = [
@@ -120,11 +119,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny', # 누구나 접근
     ),
 }
-
-CRONJOBS = [
-    ('*/2 * * * *', 'notice.cron.Crawling', '>> /home/ubuntu/Src/backend/log/01_schedule.log'),
-    ('*/2 * * * *', 'notice.cron.hello', '>> /home/ubuntu/Src/backend/log/02_schedule.log')
-]
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=20),
