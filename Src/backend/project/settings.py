@@ -84,7 +84,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "project.wsgi.application"
 
 # CORS 관련 추가
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
@@ -122,7 +122,8 @@ REST_FRAMEWORK = {
 }
 
 CRONJOBS = [
-    ('*/5 * * * *', 'notice.cron.Crawling', '>> /tmp/log/schedule.log'),
+    ('*/2 * * * *', 'notice.cron.Crawling', '>> /Users/iai/Desktop/Workspace/2024-1-OSSProj-GiveMeTen-11/Src/backend/log/01_schedule.log'),
+    ('*/2 * * * *', 'notice.cron.hello', '>> /Users/iai/Desktop/Workspace/2024-1-OSSProj-GiveMeTen-11/Src/backend/log/02_schedule.log')
 ]
 
 SIMPLE_JWT = {
