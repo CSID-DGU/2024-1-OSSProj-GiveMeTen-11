@@ -9,7 +9,7 @@ box-sizing: border-box;
 `
 
 export const Container = styled(div)`
-width: 600px;
+width: 800px;
 height: 400px;
 background-color: ${colors.White};
 border: 1px solid ${colors.Grey};
@@ -34,12 +34,12 @@ width: 100%;
 height: 25%;
 padding: 5px;
 display: flex;
-flex-wrap: wrap;
-overflow-y: auto;
+justify-content: space-between;
 `
 
 export const CategorySelectCol = styled(div)`
 width: 20%;
+overflow-y: auto;
 `
 
 export const CategoryShowCol = styled(div)`
@@ -107,7 +107,7 @@ flex-wrap: wrap;
 align-content: flex-start;
 width: 100%;
 height: 100%;
-overflow: auto;
+overflow-y: scroll;
 `
 
 export const CategoryGrid = styled(div)`
@@ -119,16 +119,19 @@ const CheckboxStyle = styled(div)`
 cursor: pointer;
 width: 90%;
 height: 90%;
-font-size: 12px;
+font-size: 16px;
 border-radius: 10px;
 border: 1px solid black;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 5px;
 box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.2);
 -webkit-box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.2);
 -moz-box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.);
 transition: all 0.5s;
+
+p {
+    margin-top: 18px;
+}
 `
 
 export const CheckboxContainer = styled(CheckboxStyle)`
@@ -144,19 +147,55 @@ font-weight: 600;
 border: 2px solid black;
 `
 
+export const CategorySummaryContainer = styled(div)`
+width: 70%;
+display: flex;
+flex-wrap: wrap;
+overflow-y: auto;
+`
+
 export const CheckboxSummaryCardContainer = styled(div)`
 display: flex;
 align-items: center;
-height: 35%;
+height: 30%;
 font-size: 12px;
 margin: 5px;
-& > button {
-    cursor: pointer;
+cursor: pointer;
+& > span {
+    margin-left: 5px;
     background: none;
     border: none;
     font-weight: 500;
-    & > p {
-        color: ${colors.Red};
-    }
+    color: ${colors.Red};
+}
+`
+
+export const CheckboxSummaryCardBig = styled.p`
+color: ${colors.Orange};
+font-weight: 600;
+`
+
+export const CategorySubmitContainer = styled(div)`
+width: 30%;
+`
+
+export const SubmitBtn = styled.button`
+cursor: pointer;
+width: 80%;
+margin-top: 20px;
+padding: 15px;
+background: ${colors.Black};
+color: ${colors.White};
+border: none;
+border-radius: 10px;
+font-size: 18px;
+font-weight: 600;
+box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.2);
+-webkit-box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.2);
+-moz-box-shadow: 3px 3px 3px 0px rgba(55,49,80,0.);
+transition: 0.5s all;
+
+&:hover {
+    background: ${colors.Black_Dark};
 }
 `
