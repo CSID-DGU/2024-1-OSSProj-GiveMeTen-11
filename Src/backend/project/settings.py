@@ -122,7 +122,7 @@ REST_FRAMEWORK = {
 }
 
 CRONJOBS = [
-    ('* 17 * * *', 'notice.cron.Crawling', '>> /tmp/log/schedule.log'),
+    ('*/5 * * * *', 'notice.cron.Crawling', '>> /tmp/log/schedule.log'),
 ]
 
 SIMPLE_JWT = {
