@@ -1,7 +1,7 @@
 import requests
 from decouple import config
 from bs4 import BeautifulSoup
-from decouple import config
+
 
 from .models import Category
 
@@ -51,9 +51,15 @@ def update_data():
             author = soup.select_one('#content_focus > div > div.board > div.board_list > ul > li:nth-child(2) > a > div.top > div.info > span:nth-child(2)')
 
         elif category.big == '입시공지':
-            title = soup.select_one('#content_focus > div > div.board > div.board_list > ul > li:nth-child(1) > a > div.top > p')
-            date = soup.select_one('#content_focus > div > div.board > div.board_list > ul > li:nth-child(1) > a > div.top > div.info > span:nth-child(1)')
-            author = soup.select_one('#content_focus > div > div.board > div.board_list > ul > li:nth-child(1) > a > div.top > div.info > span:nth-child(2)')
+            if category.detail == '전체':
+                title = soup.select_one('#content_focus > div > div.board > div.board_list > ul > li:nth-child(1) > a > div.top > p')
+                date = soup.select_one('#content_focus > div > div.board > div.board_list > ul > li:nth-child(1) > a > div.top > div.info > span:nth-child(1)')
+                author = soup.select_one('#content_focus > div > div.board > div.board_list > ul > li:nth-child(1) > a > div.top > div.info > span:nth-child(2)')
+            elif category.detail == '블로그':
+                title = soup.select_one('#container > main > div > div.area-common > article:nth-child(3) > div > a > strong')
+                date = soup.select_one('#container > main > div > div.area-common > article:nth-child(3) > div > div > span.date')
+                author = 'IAMBH'
+
         elif category.big == '장학공지':
             title = soup.select_one('#content_focus > div > div.board > div.board_list > ul > li:nth-child(11) > a > div.top > p')
             date = soup.select_one('#content_focus > div > div.board > div.board_list > ul > li:nth-child(11) > a > div.top > div.info > span:nth-child(1)')
@@ -146,6 +152,8 @@ def update_data():
         
         #새로운 공지사항이 올라오게 되면 문자전송
         if category.title != new_title:
+            print("new")
+
             api_key = config('API_KEY')
             api_secret = config('API_SECRET')
 
@@ -176,4 +184,4 @@ def update_data():
             category.author = new_author
             category.save()
 
-scheduler.add_job(update_data, 'interval', minutes=3)
+scheduler.add_job(update_data, 'interval', hours=24)
