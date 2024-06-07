@@ -4,10 +4,11 @@ import NoticeCard from '../../components/Notice/NoticeCard.js';
 import Navbar from '../../components/Nav/Navbar.js';
 import MainTitle from '../../components/MainTitle/MainTitle.js';
 import { Container, ConponentContainer, Col, Row, Mt50, Background } from "./Main.style.js";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function Main() {
+    let [login, setLogin] = useState(false)
     let data = {
         "categories": [
             {
@@ -20,17 +21,18 @@ function Main() {
             }
         ]
     }
-
+    
     useEffect(() => {
         console.log(document.cookie)
     }, [])
+
 
 
     return (
         <>
             <Background></Background>
             <Container>
-                <Navbar></Navbar>
+                <Navbar login={login} setLogin={setLogin}></Navbar>
                 <ConponentContainer>
                     <MainTitle></MainTitle>
                     <Row>

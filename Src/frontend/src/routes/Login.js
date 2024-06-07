@@ -167,7 +167,7 @@ function Login() {
       if (response.ok) {
         navigate('/');
       } else {
-        alert('로그인에 실패했습니다. 다시 확인해주세요.');
+        alert('회원정보가 틀렸습니다. 다시 확인해주세요.');
       }
     } catch (error) {
       console.error('Error:', error);

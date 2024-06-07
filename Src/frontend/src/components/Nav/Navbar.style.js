@@ -53,3 +53,14 @@ export const RightCol = styled(div)`
     margin-left: 20px;
 }
 `
+
+export const DisplayFlex = styled(div)`
+display: flex;
+align-items: center;
+p {
+    cursor: pointer;
+    margin-right: 30px;
+    text-decoration: underline;
+    color: ${colors.Black};
+}
+`
