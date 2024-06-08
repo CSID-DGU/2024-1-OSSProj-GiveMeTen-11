@@ -1,5 +1,7 @@
 # A4.2 OSS 프로젝트 회의록
 
+[프로젝트로 돌아가기](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11)
+
 ## 1차 회의 (Kick-Off 미팅)
 
 - 일시: 2024년 3월 25일

@@ -1,8 +1,10 @@
 # A4.3 OSS 프로젝트 제품 구성, 배포 및 운영 자료
 
+[프로젝트로 돌아가기](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11)
+
 ## 1. 프로젝트 제품 구성
 
-- [overview.md](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/blob/main/Src/overview.md) 참고
+- [overview.md](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/blob/main/Src/overview.md)
 
 ## 2. 프로젝트 제품 배포 방법
 
