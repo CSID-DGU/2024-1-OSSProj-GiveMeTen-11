@@ -165,6 +165,13 @@ function Login() {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        const { access, refresh } = data.token;
+
+        // JWT 토큰을 쿠키에 저장
+        document.cookie = `access=${access}; path=/`;
+        document.cookie = `refresh=${refresh}; path=/`;
+
         navigate('/');
       } else {
         alert('회원정보가 틀렸습니다. 다시 확인해주세요.');
