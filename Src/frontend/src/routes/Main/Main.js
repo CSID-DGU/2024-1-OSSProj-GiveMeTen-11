@@ -47,7 +47,6 @@ function Main() {
                     console.error('There was a problem with the fetch operation:', error);
                 }
             };
-
             fetchCategoryData();
         }
     }, []);
@@ -68,7 +67,7 @@ function Main() {
                             <ScheduleCard />
                         </Col>
                         <Col>
-                            <CategoryCard data={categoryData} setData={setCategoryData} isLogin={login} />
+                            <CategoryCard data={categoryData} isLogin={login} />
                         </Col>
                     </Row>
                     <Mt50>

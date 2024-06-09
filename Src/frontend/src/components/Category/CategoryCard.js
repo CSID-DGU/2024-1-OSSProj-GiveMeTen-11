@@ -7,7 +7,7 @@ import { CategorySummaryTab, CategorySubmitTab } from './CategoryShowRowComponen
 import { CategorySelectRow, CategoryShowCol, CategoryShowRow, Container, MainSelectRow, CategoryNoticeP } from './Category.style';
 import { useNavigate } from 'react-router-dom';
 
-function CategoryCard({data, setData, isLogin}) {
+function CategoryCard({data, isLogin}) {
     let navigate = useNavigate();
     let [mainTab, setMainTab] = useState('');
     let [detailTab, setDetailTab] = useState('');

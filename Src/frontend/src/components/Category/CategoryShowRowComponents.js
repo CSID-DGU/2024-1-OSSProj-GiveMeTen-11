@@ -10,8 +10,8 @@ function CategorySummaryTab({ selectedCategory, setSelectedCategory }) {
 
 function CategorySummaryButtons({ selectedCategory, setSelectedCategory }) {
     return (
-        selectedCategory.map((a) => {
-            return (<CategorySummaryCard name={a} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />)
+        selectedCategory.map((a, i) => {
+            return (<CategorySummaryCard key={i} name={a} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />)
         })
     )
 }
@@ -72,10 +72,13 @@ function CategorySubmitTab({ selectedCategory }) {
                 .then(data => {
                     // 응답 데이터 처리
                     console.log(data);
+                    alert('저장 성공!')
+                    window.location.reload(true);
                 })
                 .catch(error => {
                     console.error('There was a problem with the fetch operation:', error);
                 });
+
 
             }}>알리미 저장</SubmitBtn>
         </CategorySubmitContainer>
