@@ -11,9 +11,6 @@ function NoticeCard({data}) {
                     </tr>
                 </TableHead>
                 <NoticeContentsList data={data}></NoticeContentsList>
-                <NoticeContents categoryTitle={"a.big"} categoryDetail={"a.detail"} contents={"a.title"} date={"a.date"} url={"a.url"}></NoticeContents>
-                <NoticeContents categoryTitle={"a.big"} categoryDetail={"a.detail"} contents={"a.title"} date={"a.date"} url={"a.url"}></NoticeContents>
-                <NoticeContents categoryTitle={"a.big"} categoryDetail={"a.detail"} contents={"a.title"} date={"a.date"} url={"a.url"}></NoticeContents>
             </MainTable>
         </Container>
     )

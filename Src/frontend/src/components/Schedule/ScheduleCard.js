@@ -8,10 +8,6 @@ function ScheduleCard({ data }) {
             <CardContainer>
                 <CardScrollContainer>
                     <ScheduleCardList data={data}></ScheduleCardList>
-                    <ScheduleElementCard date={"2020-20-20"} contents={"테스트용"} detail={"디테일"} />
-                    <ScheduleElementCard date={"2020-20-20"} contents={"테스트용"} detail={"디테일"} />
-                    <ScheduleElementCard date={"2020-20-20"} contents={"테스트용"} detail={"디테일"} />
-                    <ScheduleElementCard date={"2020-20-20"} contents={"테스트용"} detail={"디테일"} />
                 </CardScrollContainer>
             </CardContainer>
         </Container>
