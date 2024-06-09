@@ -10,14 +10,6 @@ function Main() {
     const [login, setLogin] = useState(false);
     const [categoryData, setCategoryData] = useState({
         "categories": [
-            {
-                "big": "학사공지",
-                "detail": "전체",
-                "url": "https://www.dongguk.edu/article/HAKSANOTICE/list",
-                "title": "테스트용임",
-                "author": "민성제",
-                "date": "2024-06-09"
-            }
         ]
     });
 

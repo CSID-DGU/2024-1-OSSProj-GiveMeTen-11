@@ -20,7 +20,7 @@ function CategoryCard({data, isLogin}) {
     }, [data]); // data가 변경될 때마다 실행
 
     return (
-        !isLogin ?
+        isLogin ?
         <Container>
             <MainSelectRow>
                 <MainSelectBtn name={'공지사항'} img={basicNotice} mainTab={mainTab} setMainTab={setMainTab} setDetailTab={setDetailTab} />
