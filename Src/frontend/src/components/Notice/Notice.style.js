@@ -6,11 +6,13 @@ background-color: white;
 box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
 -webkit-box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
 -moz-box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
+border-radius: 10px;
+overflow: hidden;
+border: 1px solid ${colors.Black};
 `
 
 export const MainTable = styled.table`
 width: 100%;
-border: 1px solid ${colors.Black};
 border-spacing: 0px;
 `
 
