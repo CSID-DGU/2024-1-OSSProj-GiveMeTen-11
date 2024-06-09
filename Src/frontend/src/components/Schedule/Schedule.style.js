@@ -9,6 +9,9 @@ text-align: center;
 justify-content: center;
 align-content: center;
 border: 2px solid ${colors.Orange};
+box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
+-webkit-box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
+-moz-box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
 /* border-radius: 20px; */
 `
 export const MonthText = styled.h2`

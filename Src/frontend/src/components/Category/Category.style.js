@@ -13,6 +13,9 @@ width: 800px;
 height: 400px;
 background-color: ${colors.White};
 border: 1px solid ${colors.Grey};
+box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
+-webkit-box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
+-moz-box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
 `
 
 export const MainSelectRow = styled(div)`
