@@ -12,7 +12,6 @@ function NoticeCard({data}) {
                 </TableHead>
                 <NoticeContentsList data={data}></NoticeContentsList>
             </MainTable>
-
         </Container>
     )
 }
