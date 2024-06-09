@@ -12,7 +12,7 @@ border: 2px solid ${colors.Orange};
 box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
 -webkit-box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
 -moz-box-shadow: 4px 4px 5px 0px rgba(55,49,80,0.30);
-/* border-radius: 20px; */
+border-radius: 20px;
 `
 export const MonthText = styled.h2`
 font-size: 30px;
@@ -25,11 +25,18 @@ background-color: ${colors.White};
 width: 100%;
 height: 84%;
 overflow-x: hidden;
-overflow-y: auto;
 margin: auto;
-/* border-bottom-left-radius: 18px;
-border-bottom-right-radius: 18px; */
+border-bottom-left-radius: 16px;
+border-bottom-right-radius: 16px;
 `
+
+export const CardScrollContainer = styled.div`
+background-color: ${colors.White};
+width: 100%;
+height: 100%;
+overflow-y: scroll;
+`
+
 export const Card = styled.div`
 min-height: 25%;
 text-align: left;
