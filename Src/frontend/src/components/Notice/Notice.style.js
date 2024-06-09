@@ -25,6 +25,14 @@ export const TableBody = styled.tbody`
 background-color: ${colors.White};
 `
 
+export const W30td = styled.td`
+width: 30%;
+`
+
+export const W70td = styled.td`
+width: 70%;
+`
+
 export const CategoryDetail = styled.span`
 color: ${colors.Red};
 `
@@ -35,6 +43,7 @@ padding: 10px;
 `
 
 export const Contents = styled.p`
+cursor: pointer;
 font-size: 20px;
 margin: 10px 0 0 0;
 `

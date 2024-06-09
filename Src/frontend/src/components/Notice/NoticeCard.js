@@ -1,30 +1,37 @@
-import { Container, MainTable, TableHead, TableBody, CategoryDetail, ContentsCell, Contents, Date } from "./Notice.style";
+import { Container, MainTable, TableHead, TableBody, W30td, W70td, CategoryDetail, ContentsCell, Contents, Date } from "./Notice.style";
 
-function NoticeCard() {
+function NoticeCard({data}) {
     return (
         <Container>
             <MainTable>
                 <TableHead>
                     <tr>
-                        <td>카테고리</td>
-                        <td>내용</td>
+                        <W30td>카테고리</W30td>
+                        <W70td>내용</W70td>
                     </tr>
                 </TableHead>
-                <NoticeContents categoryTitle='학사공지' categoryDetail='프로그램 및 특강' contents='2024학년도 여름학기 현장실습 교과목 운영 안내' date='2024.04.26'/>
-                <NoticeContents categoryTitle='학사공지' categoryDetail='프로그램 및 특강' contents='2024학년도 여름학기 현장실습 교과목 운영 안내' date='2024.04.26'/>
+                <NoticeContentsList data={data}></NoticeContentsList>
             </MainTable>
 
         </Container>
     )
 }
 
-function NoticeContents({categoryTitle, categoryDetail, contents, date}) {
+function NoticeContentsList({data}) {
+    return (
+        data["categories"].map((a, i) => {
+            return <NoticeContents key={i} categoryTitle={a.big} categoryDetail={a.detail} contents={a.title} date={a.date} url={a.url}></NoticeContents>
+        })
+    )
+}
+
+function NoticeContents({categoryTitle, categoryDetail, contents, date, url}) {
     return (
         <TableBody>
             <tr>
                 <td>{categoryTitle}/<CategoryDetail>{categoryDetail}</CategoryDetail></td>
                 <ContentsCell>
-                    <Contents>{contents}</Contents>
+                    <Contents onClick={()=>{window.open(url)}}>{contents}</Contents>
                     <Date>{date}</Date>
                 </ContentsCell>
             </tr>

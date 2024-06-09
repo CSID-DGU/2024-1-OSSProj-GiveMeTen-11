@@ -201,3 +201,14 @@ transition: 0.5s all;
     background: ${colors.Black_Dark};
 }
 `
+
+export const CategoryNoticeP = styled.p`
+font-size: large;
+margin-top: 30px;
+color: ${colors.Black};
+& > span {
+    cursor: pointer;
+    text-decoration: underline;
+    color: ${colors.Orange};
+}
+`
