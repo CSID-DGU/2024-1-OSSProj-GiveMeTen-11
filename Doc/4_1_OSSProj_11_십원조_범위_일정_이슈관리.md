@@ -1,5 +1,7 @@
 # **A4.1 프로젝트 범위 / 일정 / 이슈 관리**
 
+[프로젝트로 돌아가기](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11)
+
 ## **범위/일정 관리**
 
 - [프로젝트 간트차트](https://docs.google.com/spreadsheets/d/1vVCRX_vdMhFZZHoJ5Yt_aKJLxs6UkNaMYOK2mssfyKI/edit?usp=sharing)

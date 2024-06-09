@@ -23,7 +23,7 @@
 <img src="" alt="service_img">
 
 ## 🛠️ 기술 아키텍처
-![image](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/2acc470e-0822-4f59-aafb-51cea1cd0573)
+![tech](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/63501c63-7d77-4959-a86e-5970b4017d1e)
 
 ## ➡️ 문서 바로가기
 

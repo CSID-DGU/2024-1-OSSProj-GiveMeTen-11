@@ -33,19 +33,19 @@
             <tr>
                 <td rowspan="3" align="center">(BE)
                     backend/</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
+                <td>회원관리</td>
+                <td>user/views.py, models.py</td>
+                <td>https://github.com/LikeLion-at-DGU/moin_backend</td>
             </tr>
             <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
+                <td>학사일정</td>
+                <td>notice/views.py, models.py</td>
+                <td>직접 코딩</td>
             </tr>
             <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
+                <td>공지사항 관리</td>
+                <td>notice/views.py, models.py</td>
+                <td>직접 코딩</td>
             </tr>
         </tbody>
     </table>

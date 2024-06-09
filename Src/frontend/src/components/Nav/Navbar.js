@@ -24,7 +24,11 @@ function BtnContainer({login, setLogin}) {
     return (
         login ?
         <OrangeBtn onClick={()=>{
-            setLogin(false)
+            function deleteCookie(name) {
+                document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            }
+            deleteCookie('access')
+            deleteCookie('refresh')
             window.location.reload()}}>Logout</OrangeBtn>
         :
         <DisplayFlex>
