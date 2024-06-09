@@ -3,11 +3,11 @@
 <div><img src="https://capsule-render.vercel.app/api?type=waving&color=0:99cc99,100:009630&height=200&section=header&text=GiveMeTen&fontSize=90" /></div>
 
 
-|구분|이름|학과|학번|주요 역할|세부 역할|
+|구분|이름|학과|학번|주요 역할|
 |---|---|---|---|---|---|
-|팀장|[전병현](https://github.com/IAMBH)|산업시스템공학과|2019112481|BE, 크롤링|회원관리 API 및 카테고리 API 구현, 크롤링 구현, 문자알림 기능 추가|
-|팀원|[박주한](https://github.com/pjh0428)|사학과|2019110359|FE|회원가입/로그인 페이지 구현|
-|팀원|[성민제](https://github.com/MinSungJe)|의생명공학과|2019111770|FE|메인 페이지 구현|
+|팀장|[전병현](https://github.com/IAMBH)|산업시스템공학과|2019112481|BE, 크롤링|
+|팀원|[박주한](https://github.com/pjh0428)|사학과|2019110359|FE|
+|팀원|[성민제](https://github.com/MinSungJe)|의생명공학과|2019111770|FE|
 
 ## ❗ 서비스 소개
 ### 📢 동국대학교 알리미 서비스 DNOW
