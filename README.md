@@ -20,7 +20,7 @@
 - 동국대학교 학생들의 공지사항 및 학사일정 인지를 돕기 위한 알림 웹 애플리케이션 개발
 
 ## 🎬 최종 서비스 화면
-![service](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/ec51ece1-95c3-418f-8e47-d71cf8d68208)
+![service](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/bbf70c29-f714-4feb-9550-4edc4764591b)
 
 ## 🛠️ 기술 아키텍처
 ![tech](https://github.com/CSID-DGU/2024-1-OSSProj-GiveMeTen-11/assets/101497652/63501c63-7d77-4959-a86e-5970b4017d1e)
