@@ -23,16 +23,19 @@ class ScheduleAPIView(APIView):
 
         schedules = []
         for i in range(27,43):
-            date = soup.select_one('#content_focus > div > div.cont_group > div.schedule > div > table > tbody > tr:nth-child('+ i +') > td:nth-child(2)')
-            title = soup.select_one('#content_focus > div > div.cont_group > div.schedule > div > table > tbody > tr:nth-child(' + i + ') > td:nth-child(3)')
-            detail = soup.select_one('#content_focus > div > div.cont_group > div.schedule > div > table > tbody > tr:nth-child(' + i +') > td:nth-child(3) > p')
-            if date and title:
-                    schedules.append({
-                        'date': date.get_text(strip=True),
-                        'title': title.get_text(strip=True),
-                        'detail': detail.get_text(strip=True) if detail else ''
-                    })
+            date = soup.select_one('#content_focus > div > div.cont_group > div.schedule > div > table > tbody > tr:nth-child('+ str(i) +') > td:nth-child(2)')
+            title = soup.select_one('#content_focus > div > div.cont_group > div.schedule > div > table > tbody > tr:nth-child(' + str(i) + ') > td:nth-child(3)')
+            detail = soup.select_one('#content_focus > div > div.cont_group > div.schedule > div > table > tbody > tr:nth-child(' + str(i) +') > td:nth-child(3) > p')
+            
+            schedules.append({
+                'date': date.get_text(strip=True),
+                'title': title.get_text(strip=True),
+                'detail': detail.get_text(strip=True) if detail else ''
+            })
+        
+        if schedules:
             return Response(schedules)
+        
         else:
             return Response({"error": "Failed to retrieve data"}, status=response.status_code)
         
