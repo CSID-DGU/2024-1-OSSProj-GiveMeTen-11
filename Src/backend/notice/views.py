@@ -11,11 +11,12 @@ from sdk.exceptions import CoolsmsException
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 class ScheduleAPIView(APIView):
     def get(self, request):
-        #content_focus > div > div.cont_group > div.schedule > div > table > tbody > tr:nth-child(27) > td:nth-child(2)
+        permission_classes = [AllowAny]
+        
         response = requests.get("https://www.dongguk.edu/schedule/detail?schedule_info_seq=22")
         if response.status_code == 200:
             html = response.text
