@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 
 function Main() {
     const [login, setLogin] = useState(false);
+    const [scheduleData, setScheduleData] = useState([]);
     const [categoryData, setCategoryData] = useState({
         "categories": [
         ]
@@ -16,29 +17,44 @@ function Main() {
     useEffect(() => {
         const accessTokenCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('access='));
         const accessToken = accessTokenCookie ? accessTokenCookie.split('=')[1] : '';
+        const fetchScheduleData = async () => {
+            try {
+                const response = await fetch('http://15.164.59.41/api/v1/notice/schedule', {
+                    method: 'GET'
+                });
 
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                setScheduleData(data)
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+            }
+        };
+        const fetchCategoryData = async () => {
+            try {
+                const response = await fetch('http://15.164.59.41/api/v1/notice/check', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                setCategoryData(data);
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+            }
+        };
+        fetchScheduleData();
         if (accessToken) {
             setLogin(true);
-
-            const fetchCategoryData = async () => {
-                try {
-                    const response = await fetch('http://15.164.59.41/api/v1/notice/check', {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': `Bearer ${accessToken}`
-                        }
-                    });
-
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-
-                    const data = await response.json();
-                    setCategoryData(data);
-                } catch (error) {
-                    console.error('There was a problem with the fetch operation:', error);
-                }
-            };
             fetchCategoryData();
         }
     }, []);
@@ -56,7 +72,7 @@ function Main() {
                     <MainTitle />
                     <Row>
                         <Col>
-                            <ScheduleCard />
+                            <ScheduleCard data={scheduleData}/>
                         </Col>
                         <Col>
                             <CategoryCard data={categoryData} isLogin={login} />
